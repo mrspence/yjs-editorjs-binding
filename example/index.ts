@@ -10,7 +10,7 @@ const editor1 = new EditorJS({
 
 const ydoc1 = new Y.Doc()
 
-const provider = new WebsocketProvider('wss://demos.yjs.dev', 'editorjs-demo', ydoc1)
+const provider = new WebsocketProvider('ws://localhost:1234', 'editorjs-demo', ydoc1)
 
 const binding1 = new EditorBinding(editor1, holder1, ydoc1.getArray('docId'))
 
