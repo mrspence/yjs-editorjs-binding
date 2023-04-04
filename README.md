@@ -13,7 +13,7 @@ Open to merging back to [hughfenghen/y-editorjs](https://github.com/hughfenghen/
 
 1. Clone this repo
 2. `pnpm i`
-3. `pnpm run dev` and `pnpm run ws`
+3. `pnpm run dev` and `pnpm run ws` (runs client and WS server)
 4. Open http://localhost:8080 in two browser tabs and play
 
 
