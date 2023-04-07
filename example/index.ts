@@ -1,7 +1,7 @@
 import * as Y from "yjs"
 import EditorJS from "@editorjs/editorjs"
 import { WebsocketProvider } from "y-websocket"
-import { YDocEditorJSBinding } from "../src/yDocEditorJSBinding"
+import { YDocEditorJSBinding } from "../src"
 
 // (1) - Setup Y Doc...
 const yDoc = new Y.Doc()
