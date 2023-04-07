@@ -1,48 +1,50 @@
 {
-  "name": "y-editorjs",
-  "version": "0.1.0",
-  "description": "Editor.js binding for yjs",
-  "repository": "https://github.com/hughfenghen/y-editorjs.git",
-  "keywords": [],
-  "main": "lib/y-editor.js",
-  "files": [],
-  "author": "fenghen",
-  "license": "MIT",
-  "scripts": {
-    "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage",
-    "test": "jest --silent",
-    "ws": "node ./node_modules/y-websocket/bin/server.js",
-    "dev": "parcel example/index.html --port 8080"
-  },
-  "dependencies": {
-    "@editorjs/editorjs": "^2.26.5",
-    "@editorjs/header": "^2.4.0",
-    "@editorjs/list": "^1.4.0",
-    "@editorjs/table": "^1.2.2",
-    "buffer": "^6.0.3",
-    "diff": "^4.0.2",
-    "lib0": "^0.2.25",
-    "lodash": "^4.17.19",
-    "process": "^0.11.10",
-    "quill-delta": "^5.0.0",
-    "uuid": "^8.0.0",
-    "ws": "^8.13.0",
-    "y-websocket": "^1.2.4",
-    "yjs": "^13.0.4"
-  },
-  "devDependencies": {
-    "@types/diff": "^4.0.2",
-    "@types/http-proxy": "^1.17.0",
-    "@types/jest": "^24.0.13",
-    "@types/lodash": "^4.14.149",
-    "@types/node": "^12.0.2",
-    "parcel": "^2.8.3",
-    "ts-node": "^8.1.1",
-    "typescript": "^3.8.3"
-  },
-  "alias": {
-    "process": "process/browser.js",
-    "buffer": "buffer"
-  }
+    "name": "y-editorjs",
+    "version": "0.1.0",
+    "description": "Editor.js binding for yjs",
+    "repository": "https://github.com/hughfenghen/y-editorjs.git",
+    "keywords": [],
+    "main": "lib/y-editor.js",
+    "files": [],
+    "author": "fenghen",
+    "license": "MIT",
+    "scripts": {
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "test": "jest --silent",
+        "ws": "node ./node_modules/y-websocket/bin/server.js",
+        "dev": "parcel example/index.html --port 8080",
+        "prettier": "prettier --write ."
+    },
+    "dependencies": {
+        "@editorjs/editorjs": "^2.26.5",
+        "@editorjs/header": "^2.4.0",
+        "@editorjs/list": "^1.4.0",
+        "@editorjs/table": "^1.2.2",
+        "buffer": "^6.0.3",
+        "diff": "^4.0.2",
+        "lib0": "^0.2.25",
+        "lodash": "^4.17.19",
+        "process": "^0.11.10",
+        "quill-delta": "^5.0.0",
+        "uuid": "^8.0.0",
+        "ws": "^8.13.0",
+        "y-websocket": "^1.2.4",
+        "yjs": "^13.0.4"
+    },
+    "devDependencies": {
+        "@types/diff": "^4.0.2",
+        "@types/http-proxy": "^1.17.0",
+        "@types/jest": "^24.0.13",
+        "@types/lodash": "^4.14.149",
+        "@types/node": "^12.0.2",
+        "parcel": "^2.8.3",
+        "prettier": "2.8.7",
+        "ts-node": "^8.1.1",
+        "typescript": "^3.8.3"
+    },
+    "alias": {
+        "process": "process/browser.js",
+        "buffer": "buffer"
+    }
 }

@@ -1,15 +1,15 @@
 {
-  "compilerOptions": {
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules"
-      }
-    ],
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "downlevelIteration": true,
-    "sourceMap": true,
-    "target": "es5",
-    "jsx": "react"
-  }
+    "compilerOptions": {
+        "plugins": [
+            {
+                "name": "typescript-plugin-css-modules"
+            }
+        ],
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "downlevelIteration": true,
+        "sourceMap": true,
+        "target": "es5",
+        "jsx": "react"
+    }
 }

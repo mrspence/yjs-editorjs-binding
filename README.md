@@ -4,14 +4,14 @@
 
 ## Roadmap
 
-- [x] Working binding
-- [ ] Add tooling (prettier and more)
-- [ ] Tested binding
-- [ ] Add tooling (suitable NPM package generation)
-- [ ] Deem a stable(ish) beta release
-- [ ] Create first beta release on NPM
-- [ ] Use in a private product / gather community issues and update beta release
-- [ ] Push stable release on NPM
+-   [x] Working binding
+-   [ ] Add tooling (prettier and more)
+-   [ ] Tested binding
+-   [ ] Add tooling (suitable NPM package generation)
+-   [ ] Deem a stable(ish) beta release
+-   [ ] Create first beta release on NPM
+-   [ ] Use in a private product / gather community issues and update beta release
+-   [ ] Push stable release on NPM
 
 There are no timelines for the moment, although I'm keen to quite quickly get this sorted over a period of weeks.
 
@@ -21,7 +21,6 @@ Looking to utilise collaboration in a product that uses Editor JS. [hughfenghen/
 
 Decided not to create a pull request as we're in need of active development on this. Open to potentially merging in the future.
 
-
 ## How to run
 
 1. Clone this repo
@@ -29,12 +28,10 @@ Decided not to create a pull request as we're in need of active development on t
 3. `pnpm run dev` and `pnpm run ws` (runs client and WS server)
 4. Open http://localhost:8080 in two browser tabs and play
 
-
 ## Goals
 
-- Release a stable solution for Editor JS binding.
-- Encourage pull requests to continue the development of this yJS Editor Binding.
-
+-   Release a stable solution for Editor JS binding.
+-   Encourage pull requests to continue the development of this yJS Editor Binding.
 
 ## Community
 
