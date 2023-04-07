@@ -6,3 +6,4 @@ coverage
 .VSCodeCounter
 .parcel-cache
 lib/
+.vscode
