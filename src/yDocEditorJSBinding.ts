@@ -25,7 +25,7 @@ export class YDocEditorJSBinding {
 
     await this.editor.isReady
 
-    this.initialRenderYdocToEdittorJS()
+    this.initialRenderYdocToEditorJS()
     this.deeplyObserveYdocArray()
 
     this.isReady = true
@@ -93,7 +93,7 @@ export class YDocEditorJSBinding {
   /**
    * Initial pass at rendering Y doc to Editor JS. Only happens once, at the start.
    */
-  private initialRenderYdocToEdittorJS() {
+  private initialRenderYdocToEditorJS() {
     if (this.ydocArray.length === 0) {
       return
     }
