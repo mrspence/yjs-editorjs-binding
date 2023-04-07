@@ -1,11 +1,11 @@
-import * as Y from "yjs"
 import EditorJS, { API } from "@editorjs/editorjs"
 import { createMutex } from "./utils/mutex"
-import genUUID from "uuid/dist/v4"
+import { v4 as uuidv4 } from "uuid"
+import { Array as YArray } from "yjs"
 
 export class YDocEditorJSBinding {
     editor?: EditorJS
-    private ydocArray: Y.Array<any>
+    private ydocArray: YArray<any>
     private internalStore = new Map()
     private mutex
     private isReady: boolean
@@ -44,7 +44,7 @@ export class YDocEditorJSBinding {
         const index = event.detail.index
         const uuid =
             this.internalStoreAsArray.find((entry) => entry.index === index)?.editorBlock.uuid ||
-            genUUID() // get or generate a UUID
+            uuidv4() // get or generate a UUID
 
         const editorBlock = (await event.detail.target.save()) || {}
 
@@ -136,7 +136,7 @@ export class YDocEditorJSBinding {
 
                                 case "delete":
                                     // delete 1 or more blocks...
-                                    for (let i = index; i < index + value; i++) {
+                                    for (let i = index; i < index + (value as number); i++) {
                                         const editorBlock = this.editor.blocks.getBlockByIndex(i)
                                         const uuid =
                                             editorBlock?.holder.getAttribute("data-y2-uuid") || null
@@ -147,7 +147,7 @@ export class YDocEditorJSBinding {
                                         this.internalStore.delete(uuid)
                                     }
 
-                                    index += value // update our current block index
+                                    index += value as number // update our current block index
                                     continue
                             }
                         }

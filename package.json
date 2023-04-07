@@ -3,48 +3,60 @@
     "version": "0.1.0",
     "description": "Editor.js binding for yjs",
     "repository": "https://github.com/mrspence/yjs-editorjs-binding.git",
-    "keywords": [],
-    "main": "lib/yjs-editorjs-binding.js",
-    "files": [],
+    "keywords": [
+        "Yjs",
+        "Editor JS",
+        "EditorJS",
+        "Binding"
+    ],
+    "files": [
+        "lib/index.js",
+        "lib/LICENSE",
+        "src"
+    ],
+    "main": "lib/index.js",
     "author": "Matt Spence",
     "license": "MIT",
     "scripts": {
+        "dev": "parcel example/index.html --port 8080",
+        "build": "ncc build src/index.ts --minify --out lib/ --license LICENSE",
         "test:watch": "jest --watch",
         "test:coverage": "jest --coverage",
         "test": "jest --silent",
         "ws": "node ./node_modules/y-websocket/bin/server.js",
-        "dev": "parcel example/index.html --port 8080",
         "prettier": "prettier --write ."
     },
-    "dependencies": {
+    "devDependencies": {
         "@editorjs/editorjs": "^2.26.5",
         "@editorjs/header": "^2.4.0",
         "@editorjs/list": "^1.4.0",
         "@editorjs/table": "^1.2.2",
-        "buffer": "^6.0.3",
-        "diff": "^4.0.2",
-        "lib0": "^0.2.25",
-        "lodash": "^4.17.19",
-        "process": "^0.11.10",
-        "quill-delta": "^5.0.0",
-        "uuid": "^8.0.0",
-        "ws": "^8.13.0",
-        "y-websocket": "^1.2.4",
-        "yjs": "^13.0.4"
-    },
-    "devDependencies": {
         "@types/diff": "^4.0.2",
         "@types/http-proxy": "^1.17.0",
         "@types/jest": "^24.0.13",
         "@types/lodash": "^4.14.149",
         "@types/node": "^12.0.2",
+        "@vercel/ncc": "^0.36.1",
+        "buffer": "^6.0.3",
+        "diff": "^4.0.2",
+        "lib0": "^0.2.25",
+        "lodash": "^4.17.19",
         "parcel": "^2.8.3",
         "prettier": "2.8.7",
+        "process": "^0.11.10",
+        "quill-delta": "^5.0.0",
         "ts-node": "^8.1.1",
-        "typescript": "^3.8.3"
+        "typescript": "^3.8.3",
+        "uuid": "^8.0.0",
+        "ws": "^8.13.0",
+        "y-websocket": "^1.2.4",
+        "yjs": "^13.0.4"
     },
     "alias": {
         "process": "process/browser.js",
         "buffer": "buffer"
+    },
+    "browser": {
+        "crypto": false
     }
 }

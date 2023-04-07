@@ -31,7 +31,7 @@ Decided not to create a pull request as we're in need of active development on t
 ## Goals
 
 -   Release a stable solution for Editor JS binding.
--   Encourage pull requests to continue the development of this yJS Editor Binding.
+-   Encourage pull requests to continue the development of this yJS Editor JS Binding.
 
 ## Community
 
