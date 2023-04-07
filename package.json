@@ -16,7 +16,7 @@
     "dev": "parcel example/index.html --port 8080"
   },
   "dependencies": {
-    "@editorjs/editorjs": "github:hughfenghen/editor.js#v2.18+blockapi",
+    "@editorjs/editorjs": "^2.26.5",
     "@editorjs/header": "^2.4.0",
     "@editorjs/list": "^1.4.0",
     "@editorjs/table": "^1.2.2",
@@ -25,6 +25,7 @@
     "lib0": "^0.2.25",
     "lodash": "^4.17.19",
     "process": "^0.11.10",
+    "quill-delta": "^5.0.0",
     "uuid": "^8.0.0",
     "ws": "^8.13.0",
     "y-websocket": "^1.2.4",

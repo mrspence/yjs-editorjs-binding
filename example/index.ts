@@ -1,20 +1,24 @@
 import * as Y from 'yjs';
 import EditorJS from '@editorjs/editorjs';
 import { WebsocketProvider } from 'y-websocket'
-import { EditorBinding } from '../src/y-editor';
+import { YDocEditorJSBinding } from '../src/yDocEditorJSBinding';
 
-const holder1 = document.getElementById('codex-editor1')
-const editor1 = new EditorJS({
-  holder: holder1,
+// (1) - Setup Y Doc...
+const yDoc = new Y.Doc()
+const provider = new WebsocketProvider('ws://localhost:1234', 'docId', yDoc)
+// you can add other providers here too - we're just using WS to prove collaboration works in multiple browser tabs
+
+// (2) - Setup Y Doc + Editor JS binding...
+const binding = new YDocEditorJSBinding(yDoc.getArray('docId'))
+
+// (3) - Setup Editor JS
+const editor = new EditorJS({
+  holder: document.getElementById('editor-js'),
+
+  // Hook in our binding listener into Editor KS
+  onChange: (api, event: CustomEvent) => { binding.onBlockEventEditorJS(api, event) },
 })
 
-const ydoc1 = new Y.Doc()
+// (4) - Finally, initialise our binding with the editor
+binding.initialize(editor)
 
-const provider = new WebsocketProvider('ws://localhost:1234', 'editorjs-demo', ydoc1)
-
-const binding1 = new EditorBinding(editor1, holder1, ydoc1.getArray('docId'))
-
-// @ts-ignore
-window.editor = editor1
-// @ts-ignore
-window.binding = binding1

@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@editorjs/editorjs': github:hughfenghen/editor.js#v2.18+blockapi
+  '@editorjs/editorjs': ^2.26.5
   '@editorjs/header': ^2.4.0
   '@editorjs/list': ^1.4.0
   '@editorjs/table': ^1.2.2
@@ -11,12 +11,12 @@ specifiers:
   '@types/lodash': ^4.14.149
   '@types/node': ^12.0.2
   buffer: ^6.0.3
-  crossenv: 0.0.2-security
   diff: ^4.0.2
   lib0: ^0.2.25
   lodash: ^4.17.19
   parcel: ^2.8.3
   process: ^0.11.10
+  quill-delta: ^5.0.0
   ts-node: ^8.1.1
   typescript: ^3.8.3
   uuid: ^8.0.0
@@ -25,16 +25,16 @@ specifiers:
   yjs: ^13.0.4
 
 dependencies:
-  '@editorjs/editorjs': github.com/hughfenghen/editor.js/9edff86f008a5de48059b9b4a8dcf193385dc36e
+  '@editorjs/editorjs': 2.26.5
   '@editorjs/header': 2.4.0
   '@editorjs/list': 1.4.0
   '@editorjs/table': 1.2.2
   buffer: 6.0.3
-  crossenv: 0.0.2-security
   diff: 4.0.2
   lib0: 0.2.25
   lodash: 4.17.19
   process: 0.11.10
+  quill-delta: 5.0.0
   uuid: 8.0.0
   ws: 8.13.0
   y-websocket: 1.2.4
@@ -72,6 +72,20 @@ packages:
       chalk: 2.4.2
       js-tokens: 4.0.0
     dev: true
+
+  /@codexteam/icons/0.1.0:
+    resolution: {integrity: sha512-jW1fWnwtWzcP4FBGsaodbJY3s1ZaRU+IJy1pvJ7ygNQxkQinybJcwXoyt0a5mWwu/4w30A42EWhCrZn8lp4fdw==}
+    dev: false
+
+  /@editorjs/editorjs/2.26.5:
+    resolution: {integrity: sha512-imwXZi9NmzxKjNosa1xQf286liJYsTe2J2DWCiV5TwKhvYZ1INg5Y+FietcM2v65QmeLqP7wgBUhoI7wiCB+yQ==}
+    dependencies:
+      '@codexteam/icons': 0.1.0
+      codex-notifier: 1.1.2
+      codex-tooltip: 1.0.5
+      html-janitor: 2.0.4
+      nanoid: 3.3.6
+    dev: false
 
   /@editorjs/header/2.4.0:
     resolution: {integrity: sha512-gXq7LkMWWno0c6vYDIROn0vqGnbQ/sGENljdtTWSBefCUqzKlqbQaeN4x4IqqvxCvOiH3RtdjJvfv92/ziIxmg==}
@@ -1067,8 +1081,8 @@ packages:
     resolution: {integrity: sha512-DCp6xe/LGueJ1N5sXEwcBc3r3PyVkEEDNWCVigfvywAkeXcZMk9K41a31tkEFBW0Ptlwji6/JlAb49E3Yrxbtg==}
     dev: false
 
-  /codex-tooltip/1.0.0:
-    resolution: {integrity: sha512-Wa/p/om166GVjg+q436BERBZZz3yvTnCDDzMV2kjKIzsUkj6vCWphTSTo+M0QJRfwODKzhXYaw8+S4EXPW6r0g==}
+  /codex-tooltip/1.0.5:
+    resolution: {integrity: sha512-IuA8LeyLU5p1B+HyhOsqR6oxyFQ11k3i9e9aXw40CrHFTRO2Y1npNBVU3W1SvhKAbUU7R/YikUBdcYFP0RcJag==}
     dev: false
 
   /color-convert/1.9.3:
@@ -1111,10 +1125,6 @@ packages:
       path-type: 4.0.0
       yaml: 1.10.2
     dev: true
-
-  /crossenv/0.0.2-security:
-    resolution: {integrity: sha512-Zet/ldwzo70I+vUnjM9yHCWo2iqK/RM2s2VnZDNPE/fN062UXYXGqu9Hd7HlhNVhnYGclPcjNoySWhug5lctHw==}
-    dev: false
 
   /css-select/4.3.0:
     resolution: {integrity: sha512-wPpOYtnsVontu2mODhA19JrqWxNsfdatRKd64kmpRbQgh1KtItko5sTnEpPdpSaJszTOhEMlF/RPz28qj4HqhQ==}
@@ -1221,6 +1231,10 @@ packages:
     engines: {node: '>=0.8.0'}
     dev: true
 
+  /fast-diff/1.2.0:
+    resolution: {integrity: sha512-xJuoT5+L99XlZ8twedaRf6Ax2TgQVxvgZOYoPKqZufmJib0tL2tegPBOZb1pVNgIhlqDlA0eO0c3wBvQcmzx4w==}
+    dev: false
+
   /fill-range/7.0.1:
     resolution: {integrity: sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==}
     engines: {node: '>=8'}
@@ -1249,6 +1263,10 @@ packages:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
     dev: true
+
+  /html-janitor/2.0.4:
+    resolution: {integrity: sha512-92J5h9jNZRk30PMHapjHEJfkrBWKCOy0bq3oW2pBungky6lzYSoboBGPMvxl1XRKB2q+kniQmsLsPbdpY7RM2g==}
+    dev: false
 
   /htmlnano/2.0.3_svgo@2.8.0:
     resolution: {integrity: sha512-S4PGGj9RbdgW8LhbILNK7W9JhmYP8zmDY7KDV/8eCiJBQJlbmltp5I0gv8c5ntLljfdxxfmJ+UJVSqyH4mb41A==}
@@ -1466,6 +1484,14 @@ packages:
       '@lmdb/lmdb-win32-x64': 2.5.2
     dev: true
 
+  /lodash.clonedeep/4.5.0:
+    resolution: {integrity: sha512-H5ZhCF25riFd9uB5UCkVKo61m3S/xZk1x4wA6yp/L3RFP6Z/eHH1ymQcGLo7J3GMPfm0V/7m1tryHuGVxpqEBQ==}
+    dev: false
+
+  /lodash.isequal/4.5.0:
+    resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
+    dev: false
+
   /lodash/4.17.19:
     resolution: {integrity: sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==}
     dev: false
@@ -1507,6 +1533,12 @@ packages:
     optionalDependencies:
       msgpackr-extract: 3.0.2
     dev: true
+
+  /nanoid/3.3.6:
+    resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
+    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+    dev: false
 
   /node-addon-api/3.2.1:
     resolution: {integrity: sha512-mmcei9JghVNDYydghQmeDX8KoAm0FAiYyIcUt/N4nhyAipB17pllZQDOJD2fotxABnt4Mdz+dKTO7eftLg4d0A==}
@@ -1649,6 +1681,15 @@ packages:
   /process/0.11.10:
     resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
+    dev: false
+
+  /quill-delta/5.0.0:
+    resolution: {integrity: sha512-lVORU8dBPJdxPmwtdGhfRcz2cekn8Osuj5kwHoPMQ3MNlDT/IZ0CGUnQ/tLsAaTn31LWcDC1KyL+gkiGbBlBBw==}
+    engines: {node: '>= 12.0.0'}
+    dependencies:
+      fast-diff: 1.2.0
+      lodash.clonedeep: 4.5.0
+      lodash.isequal: 4.5.0
     dev: false
 
   /react-error-overlay/6.0.9:
@@ -1888,12 +1929,3 @@ packages:
     resolution: {integrity: sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q==}
     engines: {node: '>=6'}
     dev: true
-
-  github.com/hughfenghen/editor.js/9edff86f008a5de48059b9b4a8dcf193385dc36e:
-    resolution: {tarball: https://codeload.github.com/hughfenghen/editor.js/tar.gz/9edff86f008a5de48059b9b4a8dcf193385dc36e}
-    name: '@editorjs/editorjs'
-    version: 2.18.0
-    dependencies:
-      codex-notifier: 1.1.2
-      codex-tooltip: 1.0.0
-    dev: false
