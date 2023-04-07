@@ -1,12 +1,12 @@
 {
-    "name": "y-editorjs",
+    "name": "yjs-editorjs-binding",
     "version": "0.1.0",
     "description": "Editor.js binding for yjs",
-    "repository": "https://github.com/hughfenghen/y-editorjs.git",
+    "repository": "https://github.com/mrspence/yjs-editorjs-binding.git",
     "keywords": [],
-    "main": "lib/y-editor.js",
+    "main": "lib/yjs-editorjs-binding.js",
     "files": [],
-    "author": "fenghen",
+    "author": "Matt Spence",
     "license": "MIT",
     "scripts": {
         "test:watch": "jest --watch",
