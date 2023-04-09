@@ -10,7 +10,8 @@
 -   [ ] Add tooling (suitable NPM package generation)
 -   [ ] Deem a stable(ish) beta release
 -   [ ] Create first beta release on NPM
--   [ ] More testing once initial bugs uncovered
+-   [ ] Open up to public for community testing and feedback
+-   [ ] More testing/amends once initial bugs uncovered
 -   [ ] Use in a private product / gather community issues and update beta release
 -   [ ] Push stable release on NPM
 
