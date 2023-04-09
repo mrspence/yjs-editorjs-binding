@@ -1,10 +1,12 @@
 import { Doc as YDoc } from "yjs"
-import * as Diff from "diff"
 import { YDocEditorJSBinding } from "./index"
 import { v4 as uuidv4 } from "uuid"
 import EditorJS from "@editorjs/editorjs"
 import { omit } from "lodash/fp"
 
+/**
+ * Mock for Editor JS - `window.matchMedia`
+ */
 Object.defineProperty(window, "matchMedia", {
     writable: true,
     value: jest.fn().mockImplementation((query) => ({
@@ -19,7 +21,12 @@ Object.defineProperty(window, "matchMedia", {
     })),
 })
 
-function createEditor(onChange: null | any) {
+/**
+ * Test util - create Editor JS instance
+ * @param onChange
+ * @returns
+ */
+function createEditorJSInstance(onChange: null | any) {
     const holder = document.createElement("div")
     const editor = new EditorJS({
         holder,
@@ -34,9 +41,9 @@ function createEditor(onChange: null | any) {
     return { editor, holder }
 }
 
-function createDoc() {
+function createYDocInstance(name = "xxx") {
     const doc = new YDoc()
-    return { doc, array: doc.getArray("xxx") }
+    return { doc, array: doc.getArray(name) }
 }
 
 function createEditorJSBlock(
@@ -52,7 +59,7 @@ function createEditorJSBlock(
 }
 
 test("yDOC behaviour", () => {
-    const { doc, array } = createDoc()
+    const { doc, array } = createYDocInstance()
     array.push([{ a: 2 }, { a: 4 }, { a: 8 }])
 
     expect(array.length).toBe(3)
@@ -68,7 +75,7 @@ test("yDOC behaviour", () => {
 })
 
 test("Binding", async () => {
-    const { doc, array } = createDoc()
+    const { doc, array } = createYDocInstance()
 
     const block1 = createEditorJSBlock()
     const blockData = [block1]
@@ -79,7 +86,7 @@ test("Binding", async () => {
 
     const binding = new YDocEditorJSBinding(array)
 
-    const { editor, holder } = createEditor((api, event) => {
+    const { editor, holder } = createEditorJSInstance((api, event) => {
         binding.onBlockEventEditorJS(api, event)
     })
     await binding.initialize(editor)
