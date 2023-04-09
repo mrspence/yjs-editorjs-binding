@@ -5,11 +5,12 @@
 ## Roadmap
 
 -   [x] Working binding
--   [ ] Add tooling (prettier and more)
--   [ ] Tested binding
+-   [x] Add tooling (prettier and more)
+-   [x] Tested binding
 -   [ ] Add tooling (suitable NPM package generation)
 -   [ ] Deem a stable(ish) beta release
 -   [ ] Create first beta release on NPM
+-   [ ] More testing once initial bugs uncovered
 -   [ ] Use in a private product / gather community issues and update beta release
 -   [ ] Push stable release on NPM
 
