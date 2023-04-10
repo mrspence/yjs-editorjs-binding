@@ -15,7 +15,7 @@ const binding = new YDocEditorJSBinding(yDoc.getArray("docId"))
 const editor = new EditorJS({
     holder: document.getElementById("editor-js"),
 
-    // Hook in our binding listener into Editor KS
+    // Hook in our binding listener into Editor JS
     onChange: (api, event: CustomEvent) => {
         binding.onBlockEventEditorJS(api, event)
     },
