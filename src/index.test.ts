@@ -89,7 +89,7 @@ test("Binding", async () => {
     const { editor, holder } = createEditorJSInstance((api, event) => {
         binding.onBlockEventEditorJS(api, event)
     })
-    await binding.initialize(editor)
+    await binding.bindEditor(editor)
 
     expect((await editor.save()).blocks.map(omit("id"))).toStrictEqual(blockData.map(omit("uuid")))
 

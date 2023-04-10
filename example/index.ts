@@ -22,4 +22,4 @@ const editor = new EditorJS({
 })
 
 // (4) - Finally, initialise our binding with the editor
-binding.initialize(editor)
+binding.bindEditor(editor)

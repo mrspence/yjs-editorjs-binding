@@ -20,7 +20,7 @@ export class YDocEditorJSBinding {
      * Initialize our binding with Editor JS and Y doc array.
      * @param editor
      */
-    async initialize(editor) {
+    async bindEditor(editor) {
         this.editor = editor
 
         await this.editor.isReady
