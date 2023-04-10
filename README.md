@@ -23,7 +23,19 @@ Looking to utilise collaboration in a product that uses Editor JS. [hughfenghen/
 
 Decided not to create a pull request as we're in need of active development on this. Open to potentially merging in the future.
 
-## How to run
+## Use
+
+> BETA - This is still under active development
+
+| Package Manager | Command                         |
+| --------------- | ------------------------------- |
+| NPM             | `npm i yjs-editorjs-binding`    |
+| Yarn            | `yarn add yjs-editorjs-binding` |
+| PNPM            | `pnpm i yjs-editorjs-binding`   |
+
+_More instructions to come..._
+
+## How to run this repo
 
 1. Clone this repo
 2. `pnpm i`
