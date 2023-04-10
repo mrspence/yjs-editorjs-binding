@@ -27,13 +27,36 @@ Decided not to create a pull request as we're in need of active development on t
 
 > BETA - This is still under active development
 
+1. Import `yjs-editorjs-binding` package
+
 | Package Manager | Command                         |
 | --------------- | ------------------------------- |
 | NPM             | `npm i yjs-editorjs-binding`    |
 | Yarn            | `yarn add yjs-editorjs-binding` |
 | PNPM            | `pnpm i yjs-editorjs-binding`   |
 
-_More instructions to come..._
+2. Use in your code, like the example below:
+
+```typescript
+import { Doc as YDoc } from "yjs"
+import EditorJS from "@editorjs/editorjs"
+import { YDocEditorJSBinding } from "yjs-editorjs-binding/src"
+
+const yDoc = new YDoc()
+
+const binding = new YDocEditorJSBinding(yDoc.getArray("docId"))
+
+const editor = new EditorJS({
+    holder: document.getElementById("editor-js"),
+
+    // Hook in our binding listener into Editor KS
+    onChange: (api, event: CustomEvent) => {
+        binding.onBlockEventEditorJS(api, event)
+    },
+})
+
+binding.bindEditor(editor)
+```
 
 ## How to run this repo
 
