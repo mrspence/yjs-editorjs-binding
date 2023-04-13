@@ -40,7 +40,7 @@ Decided not to create a pull request as we're in need of active development on t
 ```typescript
 import { Doc as YDoc } from "yjs"
 import EditorJS from "@editorjs/editorjs"
-import { YDocEditorJSBinding } from "yjs-editorjs-binding/src"
+import { YDocEditorJSBinding } from "yjs-editorjs-binding"
 
 const yDoc = new YDoc()
 
