@@ -1,6 +1,6 @@
 {
     "name": "yjs-editorjs-binding",
-    "version": "0.0.2",
+    "version": "0.0.4",
     "description": "Editor.js binding for yjs",
     "repository": "https://github.com/mrspence/yjs-editorjs-binding.git",
     "keywords": [
@@ -10,16 +10,16 @@
         "Binding"
     ],
     "files": [
-        "lib/index.js",
-        "lib/LICENSE"
+        "lib/"
     ],
     "main": "lib/index.js",
     "author": "Matt Spence",
     "license": "MIT",
     "scripts": {
         "dev": "parcel example/index.html --port 8080",
-        "build": "pnpm run test && ncc build src/index.ts --minify --out lib/ --license LICENSE && pnpm run typings",
+        "build": "pnpm run test && ncc build src/index.ts --minify --out lib/ --license LICENSE && pnpm run typings && pnpm run copy-readme-to-lib",
         "typings": "tsc --outDir lib --module esnext --declaration true --emitDeclarationOnly true src/index.ts --moduleResolution node",
+        "copy-readme-to-lib": "cp ./README.md lib/README.md",
         "test:watch": "jest --watch",
         "test:coverage": "jest --coverage",
         "test": "jest --silent",
