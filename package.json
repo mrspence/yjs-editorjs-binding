@@ -1,6 +1,6 @@
 {
     "name": "yjs-editorjs-binding",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "Editor.js binding for yjs",
     "repository": "https://github.com/mrspence/yjs-editorjs-binding.git",
     "keywords": [
@@ -27,7 +27,8 @@
         "prettier": "prettier --write ."
     },
     "dependencies": {
-        "@editorjs/editorjs": "^2.26.5"
+        "@editorjs/editorjs": "^2.26.5",
+        "yjs": "^13.0.4"
     },
     "devDependencies": {
         "@editorjs/header": "^2.4.0",
@@ -55,8 +56,7 @@
         "typescript": "^5.0.0",
         "uuid": "^8.0.0",
         "ws": "^8.13.0",
-        "y-websocket": "^1.2.4",
-        "yjs": "^13.0.4"
+        "y-websocket": "^1.2.4"
     },
     "alias": {
         "process": "process/browser.js",
