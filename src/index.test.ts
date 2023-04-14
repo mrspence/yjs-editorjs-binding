@@ -1,5 +1,5 @@
 import { Doc as YDoc } from "yjs"
-import { YDocEditorJSBinding } from "./index"
+import { YJSEditorJSBinding } from "./index"
 import { v4 as uuidv4 } from "uuid"
 import EditorJS from "@editorjs/editorjs"
 import { omit } from "lodash/fp"
@@ -84,7 +84,7 @@ test("Binding", async () => {
 
     expect(array.length).toBe(1)
 
-    const binding = new YDocEditorJSBinding(array)
+    const binding = new YJSEditorJSBinding(array)
 
     const { editor, holder } = createEditorJSInstance((api, event) => {
         binding.onBlockEventEditorJS(api, event)

@@ -1,6 +1,6 @@
 {
     "name": "yjs-editorjs-binding",
-    "version": "0.0.9",
+    "version": "0.0.10",
     "description": "Editor.js binding for yjs",
     "repository": "https://github.com/mrspence/yjs-editorjs-binding.git",
     "keywords": [

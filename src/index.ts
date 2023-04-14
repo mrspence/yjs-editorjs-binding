@@ -3,15 +3,15 @@ import { createMutex } from "./utils/mutex"
 import { v4 as uuidv4 } from "uuid"
 import { Array as YArray } from "yjs"
 
-export class YDocEditorJSBinding {
+export class YJSEditorJSBinding {
     editor?: EditorJS
-    private ydocArray: YArray<any>
+    private yArray: YArray<any>
     private internalStore = new Map()
     private mutex
     private isReady: boolean
 
-    constructor(ydocArray) {
-        this.ydocArray = ydocArray
+    constructor(yArray: YArray<any>) {
+        this.yArray = yArray
         this.mutex = createMutex()
         this.isReady = false
     }
@@ -20,13 +20,13 @@ export class YDocEditorJSBinding {
      * Initialize our binding with Editor JS and Y doc array.
      * @param editor
      */
-    async bindEditor(editor) {
+    async bindEditor(editor: EditorJS) {
         this.editor = editor
 
         await this.editor.isReady
 
         this.initialRenderYdocToEditorJS()
-        this.deeplyObserveYdocArray()
+        this.deeplyObserveyArray()
 
         this.isReady = true
     }
@@ -58,24 +58,24 @@ export class YDocEditorJSBinding {
                 case "block-added":
                     if (this.internalStore.has(uuid)) break
 
-                    this.ydocArray.insert(index, [editorBlock])
+                    this.yArray.insert(index, [editorBlock])
                     this.internalStore.set(uuid, { index, editorBlock })
                     break
 
                 case "block-removed":
                     if (!this.internalStore.has(uuid)) break
 
-                    const removeIndex = this.ydocArray.toArray().findIndex((b) => b.uuid === uuid)
-                    this.ydocArray.delete(removeIndex)
+                    const removeIndex = this.yArray.toArray().findIndex((b) => b.uuid === uuid)
+                    this.yArray.delete(removeIndex)
                     this.internalStore.delete(uuid)
                     break
 
                 case "block-changed":
                     if (this.internalStore.has(uuid)) {
-                        this.ydocArray.delete(index)
+                        this.yArray.delete(index)
                     }
 
-                    this.ydocArray.insert(index, [editorBlock])
+                    this.yArray.insert(index, [editorBlock])
                     this.internalStore.set(uuid, { index, editorBlock })
                     break
             }
@@ -93,20 +93,18 @@ export class YDocEditorJSBinding {
      * Initial pass at rendering Y doc to Editor JS. Only happens once, at the start.
      */
     private initialRenderYdocToEditorJS() {
-        if (this.ydocArray.length === 0) {
+        if (this.yArray.length === 0) {
             return
         }
 
-        this.ydocArray
-            .toArray()
-            .forEach((editorBlock, index) => this.renderBlock(editorBlock, index))
+        this.yArray.toArray().forEach((editorBlock, index) => this.renderBlock(editorBlock, index))
     }
 
     /**
-     * Listen to changes in our ydocArray
+     * Listen to changes in our yArray
      */
-    private deeplyObserveYdocArray() {
-        this.ydocArray.observeDeep((eventArray, transaction) => {
+    private deeplyObserveyArray() {
+        this.yArray.observeDeep((eventArray, transaction) => {
             this.mutex(() => {
                 for (const event of eventArray) {
                     // We're parsing the quill-delta object, which requires us to track the current block index as we loop through.
@@ -162,10 +160,12 @@ export class YDocEditorJSBinding {
      * @param editorBlock
      * @param index
      */
-    private renderBlock(editorBlock, index) {
+    private renderBlock(editorBlock: any, index: number) {
         this.editor.blocks.insert(editorBlock.type, editorBlock.data, null, index, false)
+
         const blockApi = this.editor.blocks.getBlockByIndex(index)
         blockApi.holder.setAttribute("data-y2-uuid", editorBlock.uuid)
+
         this.internalStore.set(editorBlock.uuid, { index, blockApi, editorBlock })
     }
 }

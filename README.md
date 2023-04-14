@@ -40,14 +40,15 @@ Decided not to create a pull request as we're in need of active development on t
 ```typescript
 import { Doc as YDoc } from "yjs"
 import EditorJS from "@editorjs/editorjs"
-import { YDocEditorJSBinding } from "yjs-editorjs-binding"
+import { YJSEditorJSBinding } from "yjs-editorjs-binding"
 
 const yDoc = new YDoc()
+const yArray = yDoc.getArray("docId")
 
-const binding = new YDocEditorJSBinding(yDoc.getArray("docId"))
+const binding = new YJSEditorJSBinding(yArray)
 
 const editor = new EditorJS({
-    holder: document.getElementById("editor-js"),
+    holder: document.querySelector<HTMLElement>("#editor-js"),
 
     // Hook in our binding listener into Editor JS
     onChange: (api, event: CustomEvent) => {
