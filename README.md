@@ -7,8 +7,8 @@
 -   [x] Working binding
 -   [x] Add tooling (prettier and more)
 -   [x] Tested binding
--   [ ] Add tooling (suitable NPM package generation)
--   [ ] Deem a stable(ish) beta release
+-   [x] Add tooling (suitable NPM package generation)
+-   [ ] Deem a stable(ish) beta release (+ version bump)
 -   [ ] Create first beta release on NPM
 -   [ ] Open up to public for community testing and feedback
 -   [ ] More testing/amends once initial bugs uncovered
