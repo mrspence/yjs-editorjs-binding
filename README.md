@@ -76,3 +76,9 @@ binding.bindEditor(editor)
 Pull requests and issues are highly encouraged and will be responded to rather quickly.
 
 Like any Open Source project; this doesn't pay the bills! Consideration of that is expected in all community comms. We're in this together. 🔥
+
+## FAQs
+
+### Where's dependabot?
+
+It's coming! With PNPM becoming a first-class recommendation in many ecosystems, the Dependabot team are looking to release a solution soon - https://github.com/dependabot/dependabot-core/issues/1736#issuecomment-1507582193
